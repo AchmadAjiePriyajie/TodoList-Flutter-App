@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "225339067618",
+    "project_id": "todo-rapip",
+    "storage_bucket": "todo-rapip.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225339067618:android:035364d2cd2ca5fde5e2bb",
+        "android_client_info": {
+          "package_name": "com.example.todo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAU28pw8FgbKrgeqGzEynhNN-t6_Ojl10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
