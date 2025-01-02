@@ -17,13 +17,19 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -46,30 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDtiDy8HSr3A4NXsdDqIPB6RQZvdb6JJ04',
-    appId: '1:225339067618:web:1871755cb2584c18e5e2bb',
-    messagingSenderId: '225339067618',
-    projectId: 'todo-rapip',
-    authDomain: 'todo-rapip.firebaseapp.com',
-    storageBucket: 'todo-rapip.firebasestorage.app',
-    measurementId: 'G-BW6C7LN0BM',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBAU28pw8FgbKrgeqGzEynhNN-t6_Ojl10',
-    appId: '1:225339067618:android:035364d2cd2ca5fde5e2bb',
+    appId: '1:225339067618:android:938d2f589a4e198fe5e2bb',
     messagingSenderId: '225339067618',
     projectId: 'todo-rapip',
     storageBucket: 'todo-rapip.firebasestorage.app',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyByC2uTE8FUhdz8UAS10FOzFwzw2aGSrGA',
-    appId: '1:225339067618:ios:d27e90f12eae613ee5e2bb',
-    messagingSenderId: '225339067618',
-    projectId: 'todo-rapip',
-    storageBucket: 'todo-rapip.firebasestorage.app',
-    iosBundleId: 'com.example.todoApp',
   );
 }

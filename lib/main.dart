@@ -1,13 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todo_app/todo_page.dart';
-import 'package:todo_app/util/boxes.dart';
-import 'package:todo_app/util/todo_list.dart';
+import 'package:todo_app/firebase_options.dart';
+import 'package:todo_app/pages/auth_page.dart';
 
 void main() async {
-  await Hive.initFlutter();
-  Hive.registerAdapter(TodoAdapter());
-  boxTodo = await Hive.openBox<Todo>('todoBox');
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const TodoPage(),
+      home: const AuthPage(),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(

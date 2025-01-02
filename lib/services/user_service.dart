@@ -22,7 +22,6 @@ class UserService {
         return null; // User not found
       }
     } catch (e) {
-      print("Error retrieving user by UID: $e");
       return null;
     }
   }
