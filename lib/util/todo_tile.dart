@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-//ignore: must_be_immutable
+// ignore: must_be_immutable
 class TodoTile extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
   Function(bool?)? onChanged;
   Function(BuildContext)? deleteFunction;
+
   TodoTile({
     super.key,
     required this.onChanged,
@@ -48,13 +49,16 @@ class TodoTile extends StatelessWidget {
                 onChanged: onChanged,
                 activeColor: Colors.black,
               ),
-              Text(
-                taskName,
-                style: TextStyle(
-                  decoration: taskCompleted
-                      ? TextDecoration.lineThrough
-                      : TextDecoration.none,
-                  fontSize: 17,
+              Expanded(
+                child: Text(
+                  taskName,
+                  maxLines: 2,
+                  style: TextStyle(
+                    decoration: taskCompleted
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                    fontSize: 17,
+                  ),
                 ),
               ),
             ],

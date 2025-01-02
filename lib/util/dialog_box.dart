@@ -16,35 +16,39 @@ class DialogBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return AlertDialog(
       backgroundColor: Colors.amber,
       content: SizedBox(
-        height: 120,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+        height: 800 / 6.15,
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextField(
+                maxLength: 15,
+                controller: controller,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  fillColor: Colors.white,
+                  filled: true,
+                  hintText: 'Add new task',
                 ),
-                fillColor: Colors.white,
-                filled: true,
-                hintText: 'Add new task',
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                MyButton(text: 'save', onPressed: onSave),
-                const SizedBox(
-                  width: 5,
-                ),
-                MyButton(text: 'cancel', onPressed: onSave),
-              ],
-            )
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  MyButton(text: 'save', onPressed: onSave),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  MyButton(text: 'cancel', onPressed: onCancel),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
