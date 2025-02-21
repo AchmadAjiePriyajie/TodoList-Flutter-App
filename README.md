@@ -1,2 +1,2 @@
 # TodoList-Flutter-App
-Simple todolist application using flutter framework and hive as local database.
+Simple todolist application using flutter framework and firebase as cloud database.
